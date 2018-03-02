@@ -33,7 +33,7 @@ class Acc
      */
     public function Create($acc_name, $acc_desc, $acc_user, $acc_passwd)
     {
-        $query = $this->db->prepare("INSERT INTO accs(acc_name, acc_desc, acc_user, acc_passwd) VALUES (:acc_name,:acc_desc,:acc_user,:acc_passwd)");
+        $query = $this->db->prepare("INSERT INTO accounts(acc_name, acc_desc, acc_user, acc_passwd) VALUES (:acc_name,:acc_desc,:acc_user,:acc_passwd)");
         $query->bindParam("acc_name", $acc_name, PDO::PARAM_STR);
         $query->bindParam("acc_desc", $acc_desc, PDO::PARAM_STR);
         $query->bindParam("acc_user", $acc_user, PDO::PARAM_STR);
@@ -78,7 +78,7 @@ class Acc
      */
     public function Update($acc_name, $acc_desc, $acc_user, $acc_passwd, $acc_id)
     {
-        $query = $this->db->prepare("UPDATE accs SET acc_name = :acc_name, acc_desc = :acc_user, acc_user = :acc_passwd, acc_passwd = :acc_desc WHERE id = :id");
+        $query = $this->db->prepare("UPDATE accounts SET acc_name = :acc_name, acc_desc = :acc_user, acc_user = :acc_passwd, acc_passwd = :acc_desc WHERE id = :id");
         $query->bindParam("acc_name", $acc_name, PDO::PARAM_STR);
         $query->bindParam("acc_desc", $acc_desc, PDO::PARAM_STR);
         $query->bindParam("acc_user", $acc_user, PDO::PARAM_STR);
@@ -94,7 +94,7 @@ class Acc
      */
     public function Delete($acc_id)
     {
-        $query = $this->db->prepare("DELETE FROM accs WHERE id = :id");
+        $query = $this->db->prepare("DELETE FROM accounts WHERE id = :id");
         $query->bindParam("id", $acc_id, PDO::PARAM_STR);
         $query->execute();
     }

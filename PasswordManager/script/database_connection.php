@@ -9,7 +9,7 @@
 define('HOST', 'localhost'); // Database Host name ex. localhost
 define('USER', 'root'); // Database User ex. root
 define('PASSWORD', 'austria'); // Database User Password  (if password is not set for user then keep it empty )
-define('DATABASE', 'login_db'); // Database Name
+define('DATABASE', 'user_accounts'); // Database Name
 
 function DB()
 {
