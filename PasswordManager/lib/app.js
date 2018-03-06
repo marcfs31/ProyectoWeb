@@ -10,7 +10,7 @@ app.controller('AddAccController', ['$scope', '$http', function ($scope, $http) 
 
     // acc Details
     $scope.acc_details = {};
-$
+    
     // Errors Array
     $scope.errors = [];
 

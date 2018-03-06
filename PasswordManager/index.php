@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3>Accounts:</h3>
+                <h3>Accounts</h3>
                 <table ng-if="accs.length > 0" class="table table-bordered table-responsive table-striped">
                     <tr>
                         <th>No</th>
@@ -77,22 +77,22 @@
 
                     <div class="form-group">
                         <label for="acc_name">Account name</label>
-                        <input ng-model="acc_details.acc_name" type="text" id="acc_name" class="form-control"/>
+                        <input ng-model="acc.acc_name" type="text" id="acc_name" class="form-control"/>
                     </div>
 
                     <div class="form-group">
                         <label for="acc_desc">Account description</label>
-                        <textarea ng-model="acc_details.acc_desc" class="form-control" name="acc_desc"></textarea>
+                        <textarea ng-model="acc.acc_desc" class="form-control" name="acc_desc"></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="acc_user">Account username</label>
-                        <input ng-model="acc_details.acc_user" type="text" id="acc_user" class="form-control"/>
+                        <input ng-model="acc.acc_user" type="text" id="acc_user" class="form-control"/>
                     </div>
 
                     <div class="form-group">
                         <label for="acc_passwd">Account password</label>
-                        <input ng-model="acc_details.acc_passwd" type="password" id="acc_passwd" class="form-control"/>
+                        <input ng-model="acc.acc_passwd" type="password" id="acc_passwd" class="form-control"/>
                     </div>
 
                 </div>
@@ -124,7 +124,7 @@
 
                     <div class="form-group">
                         <label for="acc_name">Account name</label>
-                        <input ng-model="acc_details.acc_name" type="text" id="acc_name" class="form-control"/>
+                        <input ng-model="acc_details.acc_name" type="text" id="acc_name1" class="form-control"/>
                     </div>
 
                     <div class="form-group">
@@ -134,12 +134,12 @@
 
                     <div class="form-group">
                         <label for="acc_user">Account username</label>
-                        <input ng-model="acc_details.acc_user" type="text" id="acc_user" class="form-control"/>
+                        <input ng-model="acc_details.acc_user" type="text" id="acc_user1" class="form-control"/>
                     </div>
 
                     <div class="form-group">
                         <label for="acc_passwd">Account password</label>
-                        <input ng-model="acc_details.acc_passwd" type="password" id="acc_passwd" class="form-control"/>
+                        <input ng-model="acc_details.acc_passwd" type="password" id="acc_passwd1" class="form-control"/>
                     </div>
 
                 </div>

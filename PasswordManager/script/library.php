@@ -42,10 +42,10 @@ class Acc
 
         return json_encode(['acc' => [
             'id'          => $this->db->lastInsertId(),
-            'acc_name'        => $acc_name,
-            'acc_desc' => $acc_desc,
-            'acc_user' => $acc_user,
-            'acc_passwd' => $acc_passwd
+            'acc_name'    => $acc_name,
+            'acc_desc'    => $acc_desc,
+            'acc_user'    => $acc_user,
+            'acc_passwd'  => $acc_passwd
         ]]);
     }
 
@@ -56,7 +56,7 @@ class Acc
      */
     public function Read()
     {
-        $query = $this->db->prepare("SELECT * FROM accs");
+        $query = $this->db->prepare("SELECT * FROM accounts");
         $query->execute();
         $data = array();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {

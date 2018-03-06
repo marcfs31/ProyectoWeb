@@ -10,19 +10,20 @@ if (isset($data['acc'])) {
     $acc_desc = (isset($data['acc']['acc_desc']) ? $data['acc']['acc_desc'] : NULL);
     $acc_user = (isset($data['acc']['acc_user']) ? $data['acc']['acc_user'] : NULL);
     $acc_passwd = (isset($data['acc']['acc_passwd']) ? $data['acc']['acc_passwd'] : NULL);
-
+    //$acc_name = "Nom";
+    //$acc_desc = "Nom";
+    //$acc_user = "Nom";
+    //$acc_passwd = "Nom";
     // validated the request
-    /* Muestra siempre error
     if ($acc_name == NULL) {
         http_response_code(400);
         echo json_encode(['errors' => ["Account name field is required"]]);
 
     } else {
-    */
         // Add the Acc
         $acc = new Acc();
 
         echo $acc->Create($acc_name, $acc_desc, $acc_user, $acc_passwd);
-    //}
+    }
 }
 ?>
