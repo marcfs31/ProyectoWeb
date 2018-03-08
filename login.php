@@ -1,26 +1,16 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+//include database connection file
+require_once 'connect.php';
 
-$servername = "localhost";
-$username = "root";
-$password = "austria";
-$dbname = "proyecto_web";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// verifying user from database using PDO
+$stmt = $DBcon->prepare("SELECT email, password from user WHERE email='".$_POST['email']."' && password='".$_POST['password']."'");
+$stmt->execute();
+$row = $stmt->rowCount();
+if ($row > 0){
+    echo "correct";
+} else{
+    echo 'wrong';
 }
 
-$sql = "INSERT INTO user (username,email,password) VALUES (username,email,password)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
+?>
