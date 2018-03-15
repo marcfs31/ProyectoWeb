@@ -1,52 +1,53 @@
-<!doctype html>
-<html ng-app="app" lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="Formulario de login" content="">
-        <meta name="Marc Fors" content="">
-        <link rel="icon" href="img/favicon.ico">
-
-        <title>Formulario login</title>
-
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-
-        <!-- CSS -->
-        <link href="css/signin.css" type="text/css" rel="stylesheet">
-
-        <!-- Angular -->
-        <script src="js/angular.min.js"></script>
-
-        <!-- App registro -->
-        <script src="js/registerApp.js"></script>
-
-    </head>
-    <body class="text-center">
-        <div ng-controller="registerController">
-            <form class="form-signin" ng-submit="register()">
-
-                <img class="mb-4" src="img/bootstrap-solid.svg" alt="" width="72" height="72">
-
-                <h1 class="h3 mb-3 font-weight-normal">Register form</h1>
-
-                <label for="inputPassword" class="sr-only">Username</label>
-                <input ng-model="username" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-
-                <label for="inputEmail" class="sr-only">Email</label>
-                <input ng-model="email" type="email" id="email" class="form-control" placeholder="Email" required>
-
-                <label for="inputPassword" class="sr-only">Contraseña</label>
-                <input ng-model="password" type="password" id="password" class="form-control" placeholder="Password" required>
-
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerApp()">Register</button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-            </form>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta name="robots" content="noindex"/>
+      <title>angulrjs login page</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+      <link href="fonts/font-awesome.min.css" rel="stylesheet" id="main-css"/>
+      <link href="css/signin.css" rel="stylesheet" id="main-css"/>
+      <script src="lib/jquery-1.10.2.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>  
+      <script src="lib/angular.min_1.3.14.js"></script>
+   </head>
+   <body ng-app="postLogin" ng-controller="PostController as postCtrl">
+      <div class="container">
+         <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+            <div class="row">
+               
+            </div>
+            <div class="panel panel-default" >
+               <div class="panel-heading">
+                  <div class="panel-title text-center">Login to KRAM</div>
+               </div>
+               <div class="panel-body" >
+                  <form name="login" ng-submit="postCtrl.postForm()" class="form-horizontal" method="POST">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" id="inputUsername" class="form-control" required autofocus ng-model="postCtrl.inputData.username"/>
+                     </div>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" id="inputPassword" class="form-control" required ng-model="postCtrl.inputData.password"/>
+                     </div>
+                     <div class="alert alert-danger" ng-show="errorMsg">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        ×</button>
+                        <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;{{errorMsg}}
+                     </div>
+                     <div class="form-group">
+                        <div class="col-sm-12 controls">
+                           <button type="submit" class="btn btn-primary pull-right" ng-disabled="login.$invalid">
+                           <i class="glyphicon glyphicon-log-in"></i> Log in</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="lib/login_app.js"></script>
+   </body>
 </html>
