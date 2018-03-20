@@ -12,7 +12,7 @@
 </head>
 <body ng-app="App">
 
-<div ng-controller="AddAccController">
+<d  iv ng-controller="AddAccController">
 
     <!-- Content Section -->
     <div class="container">
@@ -45,7 +45,12 @@
                         <td>{{ acc.acc_name }}</td>
                         <td>{{ acc.acc_desc }}</td>
                         <td>{{ acc.acc_user }}</td>
-                        <td>{{ acc.acc_passwd }}</td>
+                        <td ng-app>
+                            <span id="box" ng-show="toggle">{{acc.acc_passwd}}</span>
+	                        <button id="toggleMessage" class="btn btn-primary btn-xs" ng-click="toggle=!toggle">
+                                {{toggle ? 'Hide' : 'Show'}}
+                            </button>
+                        </td>
                         <td>
                             <button ng-click="edit($index)"  class="btn btn-primary btn-xs">Edit</button>
                             <button ng-click="delete($index)" class="btn btn-danger btn-xs">Delete</button>
