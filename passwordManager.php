@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Kram password manager</title>
 
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
     <!-- Bootstrap CSS File  -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
 
@@ -12,7 +14,7 @@
 </head>
 <body ng-app="App">
 
-<d  iv ng-controller="AddAccController">
+<div ng-controller="AddAccController">
 
     <!-- Content Section -->
     <div class="container">
@@ -25,6 +27,9 @@
             <div class="col-md-12">
                 <div class="pull-right">
                     <button class="btn btn-primary" data-toggle="modal" data-target="#add_new_acc_modal">Add account</button>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-primary" onclick="location.href='index.html'">Logout</button>
                 </div>
             </div>
         </div>
@@ -45,8 +50,8 @@
                         <td>{{ acc.acc_name }}</td>
                         <td>{{ acc.acc_desc }}</td>
                         <td>{{ acc.acc_user }}</td>
-                        <td ng-app>
-                            <span id="box" ng-show="toggle">{{acc.acc_passwd}}</span>
+                        <td>
+                            <span ng-show="toggle">{{acc.acc_passwd}}</span>
 	                        <button id="toggleMessage" class="btn btn-primary btn-xs" ng-click="toggle=!toggle">
                                 {{toggle ? 'Hide' : 'Show'}}
                             </button>
@@ -156,7 +161,6 @@
         </div>
     </div>
     <!-- // Modal -->
-
 </div>
 
 <!-- Jquery JS file -->
@@ -171,4 +175,7 @@
 <!-- Custom JS file -->
 <script type="text/javascript" src="lib/app.js"></script>
 </body>
+<a id="github" target="_blank" href="https://github.com/marcfs31/ProyectoWeb">
+<img src="img/github.png" alt="Go to my github">
+</a>
 </html>
